@@ -1,0 +1,21 @@
+/* home.component.css */
+
+.hire button {
+  background-color: #173aff; /* Mavi renk */
+  color: #ffffff; /* Beyaz renk */
+  padding: 15px 30px; /* Daha büyük boyut */
+  font-size: 18px; /* Daha büyük font boyutu */
+  border: none; /* Kenarlık olmadan */
+  border-radius: 8px; /* Köşeleri yuvarlak hale getir */
+  cursor: pointer; /* İmleci el şeklinde göster */
+}
+
+.hire button:hover {
+  background-color: #0056b3; /* Hover durumunda daha koyu mavi renk */
+}
+
+/* home.component.css */
+
+
+
+
