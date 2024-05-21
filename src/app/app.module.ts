@@ -8,12 +8,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HireusService } from './services/hireus.service';
 import { ToastrModule } from 'ngx-toastr';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { ProjectModalComponent } from './components/project-modal/project-modal.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
+import { ContactService } from './services/contact.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,7 @@ import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, Ma
     MatDialogClose
   ],
   providers: [
-    HireusService,
+    ContactService,
     provideHttpClient(withFetch()),
     provideAnimationsAsync()
   ],

@@ -1,16 +1,17 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Hireus } from '../models/hireus';
 import { Observable } from 'rxjs';
+import { contact } from '../models/contact';
+
 
 @Injectable({
   providedIn: 'root'
 })
-export class HireusService {
+export class ContactService {
 
   constructor(private http: HttpClient) { }
 
-  hireUs(hireus: Hireus): Observable<any> {
-    return this.http.post<any>('https://localhost:7052/api/Hireus', hireus);
+  contact(contact: contact): Observable<any> {
+    return this.http.post<any>('https://localhost:7052/api/Contact', contact);
   }
 }

@@ -1,9 +1,9 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { HireusService } from '../../services/hireus.service';
-import { Hireus } from '../../models/hireus';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { ContactService } from '../../services/contact.service';
+import { contact } from '../../models/contact';
 
 @Component({
   selector: 'app-home',
@@ -11,44 +11,37 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  hireUsData: Hireus = {
+  contactData: contact = {
     id: 0,
     name: '',
     email: '',
-    work: ''
+    subject: '',
+    message: ''
   };
 
-  @ViewChild('hireUsForm') hireUsForm!: NgForm;
-
-  constructor(private hireusService: HireusService, private router: Router, private toastr: ToastrService) { }
+  constructor(private contactService: ContactService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit(): void {
   }
 
-  submitForm(hireUsForm: NgForm) {
-    const hireusData: Hireus = {
-      id: 0,
-      name: this.hireUsData.name,
-      email: this.hireUsData.email,
-      work: this.getSelectedWorks()
-    };
-
-    this.hireusService.hireUs(hireusData).subscribe(
+  submitForm(contactForm: NgForm) {
+    if (contactForm.invalid) {
+      this.toastr.error('Lütfen tüm alanları doldurun!', 'Hata',{
+        progressBar: true
+      });
+      return; // Form doğrulaması geçemediyse gönderme
+    }
+    this.contactService.contact(this.contactData).subscribe(
       response => {
-        console.log("Form submitted successfully:", response);
         // Form gönderildikten sonra sayfayı home kısmına yönlendir
         this.router.navigate([""]);
-        this.toastr.success('İsteğiniz başarıyla gönderildi!', 'Başarılı',{
+        this.toastr.success('Mesajınız başarıyla gönderildi!', 'Başarılı',{
           progressBar: true
         });
         // Sayfayı yukarı doğru kaydır
         window.scrollTo(0, 0);
         // Formu temizle
         this.clearForm();
-
-        setTimeout(() => {
-          window.location.reload();
-        },1000);
       },
       error => {
         console.error("Error submitting form:", error);
@@ -61,29 +54,13 @@ export class HomeComponent implements OnInit {
 
   clearForm() {
     // Form verilerini temizle
-    this.hireUsData = {
+    this.contactData = {
       id: 0,
       name: '',
       email: '',
-      work: ''
+      subject: '',
+      message: ''
     };
-    // Formu sıfırla
-    this.hireUsForm.resetForm();
   }
 
-  getSelectedWorks(): string {
-    // Checkbox seçimlerini al ve virgülle ayrılmış bir string olarak döndür
-    const selectedWorks: string[] = [];
-
-    // Checkbox'ların durumunu kontrol ederek seçilen işleri al
-    const checkboxes: NodeListOf<HTMLInputElement> = document.querySelectorAll('input[type=checkbox]:checked');
-    checkboxes.forEach((checkbox: HTMLInputElement) => {
-      selectedWorks.push(checkbox.value);
-    });
-
-    // Virgülle ayrılmış dizeyi oluştur
-    return selectedWorks.join(',');
-  }
 }
-
-
