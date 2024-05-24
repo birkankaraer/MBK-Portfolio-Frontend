@@ -1,5 +1,9 @@
-<h2 mat-dialog-title>Dialog with elements</h2>
-<mat-dialog-content>This dialog showcases the title, close, content and actions elements.</mat-dialog-content>
+<h2 mat-dialog-title>{{ project.title }}</h2>
+<mat-dialog-content>
+  <img [src]="project.image" alt="{{ project.title }}" />
+  <p>{{ project.description }}</p>
+  <a href="{{ project.githubLink }}" target="_blank">View on GitHub</a>
+</mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+  <button mat-button (click)="close()">Close</button>
 </mat-dialog-actions>

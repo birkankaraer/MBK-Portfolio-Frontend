@@ -4,6 +4,10 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { ContactService } from '../../services/contact.service';
 import { contact } from '../../models/contact';
+import { MatDialog } from '@angular/material/dialog';
+import { Project } from '../../models/project';
+import { ProjectModalComponent } from '../project-modal/project-modal.component';
+
 
 @Component({
   selector: 'app-home',
@@ -11,6 +15,7 @@ import { contact } from '../../models/contact';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+
   contactData: contact = {
     id: 0,
     name: '',
@@ -19,7 +24,17 @@ export class HomeComponent implements OnInit {
     message: ''
   };
 
-  constructor(private contactService: ContactService, private router: Router, private toastr: ToastrService) { }
+  project: Project[] = [
+    {
+      title: 'Rent a Car',
+      image: '/assets/img/home-page.png',
+      description: 'Frontend side of a car rental web solution. Click here to go to the repo.',
+      githubLink: 'https://github.com/birkankaraer/RentACar-Frontend'
+    },
+    // diğer projeler
+  ];
+
+  constructor(private contactService: ContactService, private router: Router, private toastr: ToastrService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
   }
@@ -63,4 +78,9 @@ export class HomeComponent implements OnInit {
     };
   }
 
+  openProjectDetail(project: any): void {
+    this.dialog.open(ProjectModalComponent, {
+      data: project
+    });
+  }
 }

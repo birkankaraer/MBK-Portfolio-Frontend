@@ -1,4 +1,4 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -6,13 +6,13 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './project-modal.component.html',
   styleUrls: ['./project-modal.component.css']
 })
-export class ProjectModalComponent implements OnInit {
+export class ProjectModalComponent {
 
   constructor(
-
+    public dialogRef: MatDialogRef<ProjectModalComponent>,
+    @Inject(MAT_DIALOG_DATA) public project: any
   ) { }
 
-  ngOnInit(): void {
-  }
-
+  close(): void {
+    this.dialogRef.close();}
 }
