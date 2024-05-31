@@ -1,6 +1,7 @@
 export interface Project{
   title: string;
-  image: string;
+  images: string[];
+  thumbnail: string;
   description: string;
   githubLink: string;
 }
