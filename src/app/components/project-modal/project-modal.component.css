@@ -1,5 +1,65 @@
-.carousel-image {
-  max-width: 100%; /* Resmin maksimum genişliğini %100 olarak ayarlar */
-  max-height: 100%; /* Resmin maksimum yüksekliğini %100 olarak ayarlar */
+a {
+  text-decoration: none;
+  color: #18272F;
+  font-weight: 700;
+  position: relative;
 }
 
+a::before {
+  content: '';
+  background-color: hsla(196, 61%, 58%, .75);
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 8px;
+  z-index: -1;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover::before {
+  bottom: 0;
+  height: 100%;
+}
+
+body {
+  display: grid;
+  font-family: 'Poppins', sans-serif;
+  font-size: 27px;
+  line-height: 1.5;
+  height: 100vh;
+  place-items: center;
+}
+
+.project-dialog {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-image {
+  max-width: auto;
+  max-height: auto; /* Örnek bir yükseklik, ihtiyacınıza göre ayarlayabilirsiniz */
+  display: block;
+  margin: 0 auto;
+}
+
+.owl-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px; /* Görsellerle arasında biraz boşluk bırakmak için */
+}
+
+.owl-nav button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  color: #333;
+}
+
+.center-text {
+  text-align: center;
+  font-size: 18px; /* Yazı boyutunu ihtiyacınıza göre ayarlayabilirsiniz */
+  margin-top: 20px; /* Üst boşluk bırakmak için */
+}

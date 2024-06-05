@@ -15,12 +15,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, MatDialogTitle } from '@angular/material/dialog';
 import { ContactService } from './services/contact.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { VisitcardComponent } from './components/visitcard/visitcard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    ProjectModalComponent
+    ProjectModalComponent,
+    VisitcardComponent
   ],
   imports: [
     BrowserModule,

@@ -7,14 +7,12 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./project-modal.component.css']
 })
 export class ProjectModalComponent {
-  sliderOptions = {
-    items: 1,
+
+  customOptions: any = {
     loop: true,
-    autoplay: true,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
+    margin: 10,
     nav: true,
-    dots: false
+    items: 1
   };
 
   constructor(
