@@ -1,27 +1,30 @@
-# Mbkglobal
+# 🌐 Kişisel Web Sitem / Personal Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
+## 📋 Açıklama / Description
 
-## Development server
+Hazır bir şablon kullanarak Angular çerçevesinde geliştirdiğim kişisel web sitem. Ücretsiz olarak Vercel ile deploy ettim ve üzerinde geliştirmeye devam ediyorum.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+My personal website, which I developed in the framework of Angular on a ready-made template, I deployed it for free with Vercel. I continue to develop on it.
 
-## Code scaffolding
+## 🚀 Dağıtım / Deployment
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Web sitemi ilk başta Vercel kullanarak ücretsiz olarak deploy ettim ve üzerinde geliştirmeye devam ediyorum.
 
-## Build
+Initially, I deployed my website using Vercel for free and continue to develop on it.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## ⚠️ Sorunlar / Issues
 
-## Running unit tests
+Web arayüzüm HTTPS üzerinde yayında olduğu için backend servislerimle (HTTP) iletişim kurarken mixed content hatası alıyorum. Bu yüzden backend servislerim düzgün çalışmıyor.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Since my web interface is live on HTTPS, I get a mixed content error when communicating with my backend services (HTTP). Therefore, my backend services do not work properly.
 
-## Running end-to-end tests
+## 🛠️ Teknolojiler / Technologies
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Frontend: Angular
+- Deployment: Vercel
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+👨‍💻 **Geliştirici / Developer:** Mustafa Birkan Karaer
+
+📧 **İletişim / Contact:** karaermustafabirkan@gmail.com
