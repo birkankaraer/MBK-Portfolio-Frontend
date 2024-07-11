@@ -12,6 +12,6 @@ export class ContactService {
   constructor(private http: HttpClient) { }
 
   contact(contact: contact): Observable<any> {
-    return this.http.post<any>('https://mbk-globalapi.azurewebsites.net/api/Contact', contact);
+    return this.http.post<any>('http://mbkglobalapi.runasp.net/api/Contact', contact);
   }
 }

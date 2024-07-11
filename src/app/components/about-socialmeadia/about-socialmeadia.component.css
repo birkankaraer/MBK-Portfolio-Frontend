@@ -1,0 +1,46 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.social-media-buttons {
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.social-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.facebook { background-color: #3b5998; }
+.twitter { background-color: #1da1f2; }
+.linkedin { background-color: #0077b5; }
+.stackoverflow { background-color: #e17730; }
+.github { background-color: #333; }
+
+.social-btn:hover {
+  opacity: 0.8;
+}
+
+/* Medya Sorguları */
+@media (min-width: 768px) {
+  .social-media-buttons {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    margin-top: 20px;
+  }
+}

@@ -16,13 +16,15 @@ import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogModule, Ma
 import { ContactService } from './services/contact.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { VisitcardComponent } from './components/visitcard/visitcard.component';
+import { AboutSocialmeadiaComponent } from './components/about-socialmeadia/about-socialmeadia.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProjectModalComponent,
-    VisitcardComponent
+    VisitcardComponent,
+    AboutSocialmeadiaComponent
   ],
   imports: [
     BrowserModule,
