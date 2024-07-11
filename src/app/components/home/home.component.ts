@@ -7,6 +7,8 @@ import { contact } from '../../models/contact';
 import { MatDialog } from '@angular/material/dialog';
 import { Project } from '../../models/project';
 import { ProjectModalComponent } from '../project-modal/project-modal.component';
+import { Tech } from '../../models/tech';
+import { TechService } from '../../services/tech.service';
 
 @Component({
   selector: 'app-home',
@@ -21,6 +23,9 @@ export class HomeComponent implements OnInit {
     subject: '',
     message: '',
   };
+
+
+  techs: Tech[] = [];
 
   projects: Project[] = [
     {
@@ -152,11 +157,27 @@ export class HomeComponent implements OnInit {
     private contactService: ContactService,
     private router: Router,
     private toastr: ToastrService,
-    private dialog: MatDialog
+    private dialog: MatDialog,
+    private techService: TechService
   ) {}
 
   ngOnInit(): void {
     this.currentIndex = 0; // Başlangıç indexini 0 olarak ayarlayın
+    this.fetchTechDetails([1, 2, 3])
+  }
+
+
+  fetchTechDetails(ids: number[]): void {
+    ids.forEach(id => {
+      this.techService.getTechById(id).subscribe(
+        (tech: Tech) => {
+          this.techs.push(tech);
+        },
+        (error) => {
+          console.error('Error fetching tech details:', error);
+        }
+      );
+    });
   }
 
   nextSlide() {

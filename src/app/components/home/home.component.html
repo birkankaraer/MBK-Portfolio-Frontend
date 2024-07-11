@@ -43,20 +43,16 @@
                   <span class="btn-background"></span>
                 </button>
               </div>
+
               <div class="intro--options">
-                <a>
-                  <h3>Microsoft SQL Server</h3>
-                  <p>I am experienced in using microsoft sql server. I use mssql as database in my full stack projects.</p>
-                </a>
-                <a>
-                  <h3>.NET</h3>
-                  <p>I am experienced in using .NET. I use it on the backend side in my full stack projects.</p>
-                </a>
-                <a>
-                  <h3>Angular</h3>
-                  <p>I am experienced in using Angular. I use it on the front-end in my full stack projects.</p>
-                </a>
+                <div *ngFor="let tech of techs" class="tech-item">
+                  <a>
+                    <h3>{{ tech.tech }}</h3>
+                    <p>{{ tech.description }}</p>
+                  </a>
+                </div>
               </div>
+
             </div>
             <div id="scroll-notification">Scroll down!</div>
           </li>
