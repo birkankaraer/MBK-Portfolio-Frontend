@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { contact } from '../models/contact';
+import { environment } from '../../environment';
 
 
 @Injectable({
@@ -9,9 +10,11 @@ import { contact } from '../models/contact';
 })
 export class ContactService {
 
+  apiUrl = environment.apiUrl;
+
   constructor(private http: HttpClient) { }
 
   contact(contact: contact): Observable<any> {
-    return this.http.post<any>('http://mbkglobalapi.runasp.net/api/Contact', contact);
+    return this.http.post<any>(this.apiUrl, contact);
   }
 }
