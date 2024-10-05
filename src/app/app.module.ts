@@ -17,6 +17,7 @@ import { ContactService } from './services/contact.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { VisitcardComponent } from './components/visitcard/visitcard.component';
 import { AboutSocialmeadiaComponent } from './components/about-socialmeadia/about-socialmeadia.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AboutSocialmeadiaComponent } from './components/about-socialmeadia/abou
     HomeComponent,
     ProjectModalComponent,
     VisitcardComponent,
-    AboutSocialmeadiaComponent
+    AboutSocialmeadiaComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
